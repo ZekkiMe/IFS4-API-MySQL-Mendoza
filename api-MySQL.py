@@ -79,7 +79,7 @@ def gestionarUsuarioGit():
                 select= input("Quieres re-escanear? (s/n)\ndatos borrados de git, tambien se borraran de la base de datos\n> ")
                 while True:
                     if select.lower() == "s":
-                        cursor.execute("DELETE FROM usuarios_leidos WHERE usuario = %s", (user,))
+                        cursor.execute("DELETE FROM usuarios_leidos WHERE nombre_usuario = %s", (user,))
                         db.commit()
                         cursor.execute("DELETE FROM datos_repo WHERE usuario = %s", (user,))
                         db.commit()
